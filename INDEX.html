@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silva Parc Inventariere</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 style="text-align: center; font-size: 2.5rem;">SILVA PARC INV. INTEGRALĂ</h1>
+        <form id="initialForm">
+            <label for="ua">Unitatea Amenajistică (U.A.):</label>
+            <input type="text" id="ua" name="ua" placeholder="Ex. 32B" required>
+
+            <label for="date">Data:</label>
+            <input type="date" id="date" name="date" required>
+
+            <label for="observatii">Observații:</label>
+            <textarea id="observatii" name="observatii" rows="3" placeholder="Adaugă observațiile din teren"></textarea>
+
+            <button type="submit">Începe Inventarierea</button>
+        </form>
+
+        <div id="inventariereSection" style="display: none;">
+            <h2 id="uaTitle">U.A.: </h2>
+            <h3 id="dateTitle">Data: </h3>
+            
+            <label for="specia">Selectați Specia:</label>
+            <select id="specia">
+                <option value="" disabled selected>Selectați Specia</option>
+                <option value="FA">Fag</option>
+                <option value="GO">Gorun</option>
+                <option value="BR">Brad</option>
+                <option value="MO">Molid</option>
+                <!-- Adăugați mai multe specii aici -->
+            </select>
+
+            <div id="diametruGrid"></div>
+            
+            <h3>Lista arborilor:</h3>
+            <ul id="arboriList"></ul>
+            
+            <h3>Ultimele 5 diametre adăugate:</h3>
+            <ul id="ultimeleDiametre"></ul>
+            
+            <button id="exportButton">Exportă date</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
